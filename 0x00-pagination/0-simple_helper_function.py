@@ -19,11 +19,9 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
         an end index corresponding to the range of indexes to return in a
         list for those particular pagination parameters
     """
-    if type(page) is not int or page < 1:
-        raise TypeError('The first argument must be an integer > 0')
+    assert type(page) is int and page > 0, 'The first argument must be an integer > 0'
 
-    if type(page_size) is not int or page < 0:
-        raise TypeError('The first argument must be an integer >= 0')
+    assert type(page_size) is int and page > 0, 'The second argument must be an integer >= 0'
 
     end_index = page * page_size
     start_index = end_index - page_size
