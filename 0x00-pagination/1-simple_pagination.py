@@ -25,6 +25,16 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Return a page according to the page number and page size
+
+        args:
+            page (int): Current page
+            page_size (int): Length of the page
+
+        return:
+            names_list (list): Returns the appropriate page of the dataset
+        """
         list_range = index_range(page, page_size)
         names_list = self.dataset()
         return names_list[list_range[0]:list_range[1]]
