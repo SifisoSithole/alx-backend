@@ -185,6 +185,5 @@ class DoubleLinkedList:
                 curr_node.frequency += 1
                 while curr_node.prev is not None and curr_node.frequency >= curr_node.prev.frequency:
                     self.swap_nodes(curr_node, curr_node.prev)
-                # self.print_list()
                 return
             curr_node = curr_node.next
